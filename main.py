@@ -80,7 +80,30 @@ def temperature_program():
 
 
 def arithmetic_program():
-    print("Arithmetic placeholder")
+    clear_console()
+    print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+    print("Podaj ilość ocen: ", end="")
+    grades_count = int_validation()
+
+    if grades_count < 1:
+        print("Podano błędną ilość ocen")
+    else:
+        grades_sum = 0
+        print("Podawaj liczby całkowite z zakresu (1 do 6)")
+        i = 0
+        while i < grades_count:
+            print(f"Podaj {i + 1} ocenę: ", end="")
+            grade = int_validation()
+            if grade < 1 or grade > 6:
+                print("Podano ocenę spoza zakresu")
+            else:
+                grades_sum += grade
+                i += 1
+        print(f"Średnia ocen wynosi: {grades_sum / grades_count}")
+
+    print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    input("Naciśnij ENTER aby wrócić do menu")
 
 
 def display_menu():
