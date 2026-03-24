@@ -55,7 +55,25 @@ def calculator_program():
 
 
 def temperature_program():
-    print("Temperature placeholder")
+    clear_console()
+    print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+    print("Kierunki konwersji:")
+    print("C - Celsjusz na Fahrenheity")
+    while True:
+        operation = input("Wybierz operację kierunek: ")
+        if operation in ["C"]:
+            break
+        else:
+            print("Podano błędną opcję")
+
+    print(f"Podaj liczbę w °{operation}: ", end="")
+    degree = float_validation()
+    if operation == "C":
+        print(f"{degree}°C = {degree * 1.8 + 32}°F")
+
+    print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    input("Naciśnij ENTER aby wrócić do menu")
 
 
 def arithmetic_program():
