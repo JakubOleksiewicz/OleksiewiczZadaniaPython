@@ -27,6 +27,19 @@ def display_menu():
     print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     return input("Wybierz opcję: ")
 
+def int_validation():
+    while True:
+      try:
+        return int(input())
+      except:
+        print("Wprowadź poprawną liczbę: ", end="")
+
+def float_validation():
+  while True:
+    try:
+      return float(input())
+    except:
+      print("Wprowadź poprawną liczbę: ", end="")
 
 def main():
     flag = True
