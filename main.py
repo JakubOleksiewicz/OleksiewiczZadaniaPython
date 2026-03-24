@@ -59,10 +59,11 @@ def temperature_program():
     print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 
     print("Kierunki konwersji:")
-    print("C - Celsjusz na Fahrenheity")
+    print("C - Celsjusze na Fahrenheity")
+    print("F - Fahrenheity na Celsjusze")
     while True:
         operation = input("Wybierz operację kierunek: ")
-        if operation in ["C"]:
+        if operation in ["C", "F"]:
             break
         else:
             print("Podano błędną opcję")
@@ -71,6 +72,8 @@ def temperature_program():
     degree = float_validation()
     if operation == "C":
         print(f"{degree}°C = {degree * 1.8 + 32}°F")
+    elif operation == "F":
+        print(f"{degree}°F = {(degree - 32) / 1.8}°C")
 
     print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     input("Naciśnij ENTER aby wrócić do menu")
