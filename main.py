@@ -100,7 +100,12 @@ def arithmetic_program():
             else:
                 grades_sum += grade
                 i += 1
-        print(f"Średnia ocen wynosi: {grades_sum / grades_count}")
+        avarge = grades_sum / grades_count
+        print(f"Średnia ocen wynosi: {avarge}")
+        if avarge >= 3:
+            print("Uczeń zdał")
+        else:
+            print("Uczeń nie zdał")
 
     print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     input("Naciśnij ENTER aby wrócić do menu")
