@@ -5,8 +5,53 @@ def clear_console():
     os.system("cls" if os.name == "nt" else "clear")
 
 
+def int_validation():
+    while True:
+        try:
+            return int(input())
+        except:
+            print("Wprowadź poprawną liczbę: ", end="")
+
+
+def float_validation():
+    while True:
+        try:
+            value = input().replace(",", ".")
+            return float(value)
+        except:
+            print("Wprowadź poprawną liczbę: ", end="")
+
+
 def calculator_program():
-    print("Kalkulator placeholder")
+    clear_console()
+    print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+    while True:
+        operation = input("Wybierz operację [+, -, *, /]: ")
+        if operation in ["+", "-", "*", "/"]:
+            break
+        else:
+            print("Wybierz poprawną operację")
+
+    print("Podaj liczbę a: ", end="")
+    a = float_validation()
+    print("Podaj liczbę b: ", end="")
+    b = float_validation()
+
+    if operation == "+":
+        print(f"{a} + {b} = {a + b}")
+    elif operation == "-":
+        print(f"{a} - {b} = {a - b}")
+    elif operation == "*":
+        print(f"{a} * {b} = {a * b}")
+    elif operation == "/":
+        if b == 0:
+            print("Nie można dzielić przez 0")
+        else:
+            print(f"{a} / {b} = {a / b}")
+
+    print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    input("Naciśnij ENTER aby wrócić do menu")
 
 
 def temperature_program():
@@ -27,19 +72,6 @@ def display_menu():
     print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     return input("Wybierz opcję: ")
 
-def int_validation():
-    while True:
-      try:
-        return int(input())
-      except:
-        print("Wprowadź poprawną liczbę: ", end="")
-
-def float_validation():
-  while True:
-    try:
-      return float(input())
-    except:
-      print("Wprowadź poprawną liczbę: ", end="")
 
 def main():
     flag = True
